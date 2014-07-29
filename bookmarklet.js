@@ -49,4 +49,3 @@
     setParams(params);
   }
 })();
-void 0;

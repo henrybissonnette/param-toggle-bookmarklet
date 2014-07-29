@@ -1,4 +1,4 @@
-bookmarklet-build.js: Makefile node_modules
+bookmarklet-build.js: Makefile node_modules bookmarklet.js
 	touch ./bookmarklet-build-temp.js
 	echo javascript: > ./bookmarklet-build-temp.js
 	./node_modules/.bin/minify ./bookmarklet.js >> ./bookmarklet-build-temp.js
