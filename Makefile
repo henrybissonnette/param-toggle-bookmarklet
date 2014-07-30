@@ -7,5 +7,5 @@ bookmarklet-build.js: Makefile node_modules bookmarklet.js
 	rm ./bookmarklet-build-temp.js
 
 node_modules: package.json
-	npm install --registry=http://npm-registry.snc1
+	npm install
 	touch node_modules
