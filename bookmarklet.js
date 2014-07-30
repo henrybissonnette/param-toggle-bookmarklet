@@ -8,15 +8,15 @@
   var addQueryParam = function (key, value, oldSearch) {
     var newSearch = '';
     var paramRegex = new RegExp('(&?' + key + '=)[^&]+');
-    if (!oldSearch) {
-      // just set if no existing params
-      newSearch = key + '=' + value;
-    } else if (!value) {
+    if (!value) {
       // empty string value clears the param entirely
       newSearch = oldSearch.replace(paramRegex,'');
     } else if (paramRegex.test(oldSearch)) {
       // change value if existing param
       newSearch = oldSearch.replace(paramRegex,'$1' + value);
+    } else if (!oldSearch) {
+      // just set if no existing params
+      newSearch = key + '=' + value;
     } else {
       // append value
       newSearch = oldSearch + '&' + key + '=' + value;
